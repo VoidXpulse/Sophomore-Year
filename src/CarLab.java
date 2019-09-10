@@ -4,7 +4,13 @@ public class CarLab {
     //Car Lab
     //Extra:
     public static void main(String[] args) {
-        Car e = new Car(50);
-        e.drive(50);
+        Car stingray = new Car(1, 100);
+        stingray.getGasTank();
+        stingray.drive(50);
+        stingray.getGasTank();
+        stingray.fillgas(50);
+        stingray.getGasTank();
+        stingray.getMilesDriven();
+
     }
 }
