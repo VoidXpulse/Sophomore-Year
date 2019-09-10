@@ -30,11 +30,13 @@ public class Car {
             tank = mt;
         }
     }
-    public void getMilesDriven() {
+    public void seeMilesDriven() {
         System.out.println("You have driven " + md + " miles.");
     }
-    public int getGasTank(){
+    public void seeGasTank(){
         System.out.println("Your car is at " + tank + " gallons of gas.");
-        return tank;
+    }
+    public int getGasTank() {
+
     }
 }

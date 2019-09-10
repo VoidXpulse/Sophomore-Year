@@ -7,7 +7,7 @@ public class CarLab {
     //Extra: More methods that do more things
     public static void main(String[] args) {
         Scanner theScanner = new Scanner(System.in);
-        int ui = 0, drivemiles;
+        int ui = 0, drivemiles = 0, fillgas = 0;
 
         Car stingray = new Car(1, 100);
 
@@ -29,20 +29,30 @@ public class CarLab {
             switch(ui){
                 case(1): {
                     stingray.getGasTank();
+                    break;
                 }
                 case(2): {
                     stingray.getMilesDriven();
+                    break;
                 }
                 case(3): {
                     do{
-
+                        System.out.println("How many miles would you like to drive?");
+                        drivemiles = theScanner.nextInt();
                     }
-                    while()
+                    while(drivemiles < 1);
 
-                    stingray.drive();
+                    stingray.drive(drivemiles);
+                    break;
                 }
                 case(4): {
-                    stingray.getGasTank();
+                    do{
+                        System.out.println("How much gas do you need?");
+                        fillgas = theScanner.nextInt();
+                    }
+                    while(fillgas < 1);
+                    stingray.fillgas(fillgas);
+                    break;
                 }
                 default: {
                     stingray.getGasTank();
