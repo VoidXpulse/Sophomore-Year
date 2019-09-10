@@ -1,15 +1,10 @@
 public class Car {
     private int mpg, tank, mt = 100, md;
 
-    public Car(int milespergallon){
-        mpg = milespergallon;
-        System.out.println("Your car has a mileage of " + mpg);
-        tank = mt;
-    }
     public Car(int milespergallon, int maxtank){
         mt = maxtank;
         mpg = milespergallon;
-        System.out.println("Your car has a mileage of " + mpg);
+        System.out.println("Your car has a mileage of " + mpg + " miles per gallon.");
         tank = maxtank;
     }
     public void drive(int miles) {
@@ -38,7 +33,8 @@ public class Car {
     public void getMilesDriven() {
         System.out.println("You have driven " + md + " miles.");
     }
-    public void getGasTank(){
+    public int getGasTank(){
         System.out.println("Your car is at " + tank + " gallons of gas.");
+        return tank;
     }
 }
