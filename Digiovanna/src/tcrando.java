@@ -69,9 +69,13 @@ public class tcrando {
                 } else {
                     alphabetic(coders, testers);
                 }
-
+                System.out.printf("%-20s |  ", "Coders");
+                System.out.printf("%-20s", "Testers");
+                System.out.println("");
                 for (int e = 0; e < coders.length; e++) {
-                    System.out.println(coders[e] + " | " + testers[e]);
+                    System.out.printf("%-20s |  ", coders[e]);
+                    System.out.printf("%-20s", testers[e]);
+                    System.out.println("");
                 }
 
                 do {
