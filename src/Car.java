@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Car {
     private int mpg,  md, tempdrive, mp = 1, passengers = 0, pdistance, pyn, checkgallondecrease;
-    private double tank, mt = 100, money = 50  0;
+    private double tank, mt = 100, money = 500;
     Random rando = new Random(); // Randomizer
     Passenger pone = new Passenger(rando.nextInt(80) + 20);
     Scanner theScanner = new Scanner(System.in);
