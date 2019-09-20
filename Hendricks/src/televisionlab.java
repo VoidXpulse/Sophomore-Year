@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class televisionlab {
 
 /** This class demonstrates the Television class*/
@@ -29,9 +30,6 @@ public class televisionlab {
                 System.out.println("Channel: " +
                         bigScreen.getChannel() +
                         " Volume: " + bigScreen.getVolume());
-                //Code Listing 6.1 continued on next page.
-                //58 Lab Manual to Accompany Starting Out with Java 5: From Control Structures to Objects
-               // Gaddis_516907_Java 4/10/07 2:10 PM Page 58
                 System.out.println(
                         "Too loud!! I am lowering the volume.");
 //decrease the volume of the television
@@ -47,12 +45,13 @@ public class televisionlab {
                         bigScreen.getChannel() +
                         " Volume: " + bigScreen.getVolume());
                 System.out.println(); //for a blank line
-//HERE IS WHERE YOU DO TASK #5
+
+
             }
         }
 class Television {
 
-    private String manufacturer;
+    private String manufacturer, e;
     private int screenSize;
     private boolean powerOn;
     private int channel, volume;
@@ -61,16 +60,25 @@ class Television {
         manufacturer = brand;
         screenSize = size;
         powerOn = false;
-        channel = 0;
+        channel = 69;
         volume = 25;
 
     }
 
     public void setChannel(int channel) {
-        this.channel = channel;
+        if(powerOn && (channel >= 1) && (channel <= 100)){
+            this.channel = channel;
+            System.out.println("The channel is now " + getChannel());
+        }
+        else if((channel <= 1) || (channel >= 100)){
+            System.out.println("You either need the premium package or the negative package for that channel");
+        }
+        else{
+            System.out.println("The TV is not on.");
+        }
     }
     public void power() {
-        if(powerOn){
+        if(!powerOn){
             powerOn = true;
         }
         else{
@@ -78,17 +86,27 @@ class Television {
         }
     }
     public void increaseVolume(){
-        volume++;
-
-        if(volume > 100){
-            volume = 100;
+        if(powerOn) {
+            volume++;
+            System.out.println("The volume is now " + getVolume());
+            if (volume > 100) {
+                volume = 100;
+            }
+        }
+        else{
+            System.out.println("The TV is not on.");
         }
     }
     public void decreaseVolume() {
-        volume--;
-
-        if(volume < 0){
-            volume = 0;
+        if(powerOn) {
+            volume--;
+            System.out.println("The volume is now " + getVolume());
+            if(volume < 0){
+                volume = 0;
+            }
+        }
+        else{
+            System.out.println("The TV is not on.");
         }
     }
     public int getChannel() {
@@ -100,7 +118,7 @@ class Television {
     public String getManufacturer() {
         return manufacturer;
     }
-    public int getScreenSize() {
-        return String.format("%d inches", screenSize);
+    public String getScreenSize() {
+        return String.format("%d inch ", screenSize);
     }
 }
