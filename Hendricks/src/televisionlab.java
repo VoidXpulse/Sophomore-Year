@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 public class televisionlab {
-
-/** This class demonstrates the Television class*/
-
+            //Justin Ecarma
+            //9/24/2019
+            //Television
+            //Extra: Gives some of the inputs parameters, like not being able to input a negative number for a channel, and none of the commands will do anything unless the tv is on.
             public static void main(String[] args)
             {
 //create a Scanner object to read from the keyboard
