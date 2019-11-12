@@ -9,15 +9,28 @@ class Pair{
         numOne = firstNum;
         numTwo = secondNum;
     }
+
     public double getDif(boolean fors) {
 
-        if(fors){
+        if (fors) {
             return numOne - numTwo;
-        }
-        else {
+        } else {
             return numTwo - numOne;
         }
     }
+
+    public double getProduct(){
+        return numOne * numTwo;
+    }
+
+    public double distance(boolean fors){
+        if (fors) {
+            return Math.abs(numOne - numTwo);
+        } else {
+            return Math.abs(numTwo - numOne);
+        }
+    }
+
 }
 
 /*
